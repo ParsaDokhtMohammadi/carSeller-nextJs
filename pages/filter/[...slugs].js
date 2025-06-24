@@ -1,29 +1,29 @@
-import { useRouter } from "next/router"
 import carsData from "@/data/carsData"
+import { useRouter } from "next/router"
 import Card from "@/components/module/Card"
-import styles from "@/styles/CarsList.module.css"
 import Back from "@/components/icons/Back"
-const Category = () => {
+import styles from "@/styles/CarsList.module.css"
+const filteredCars = () => {
     const router = useRouter()
-    const category = router.query.categoryType
-    const cars = carsData.filter(car => car.category == category) || []
-
+    const [min,max] = router.query.slugs || []
+    const filteredData = carsData.filter(car=> car.price >= min && car.price<=max)
+    if (!filteredData.length) return <h3>no cars found</h3>
     return (
-        <div className={styles.container}>
+   <div className={styles.container}>
             <div className={styles.back} onClick={() => router.back()}>
                 <Back></Back>
                 back
             </div>
             <div className={styles.cards}>
 
-                {cars.map(car => (
+                {filteredData.map(car => (
                     <div key={car.id}>
                         <Card {...car}></Card>
                     </div>
                 ))}
             </div>
         </div>
-    )
+  )
 }
 
-export default Category
+export default filteredCars
