@@ -1,24 +1,22 @@
-import Link from "next/link";
-import styles from "./Layout.module.css";
-
-function Layout({ children }) {
+import React from 'react'
+import styles from "./Layout.module.css"
+import Link from 'next/link'
+const Layout = ({children}) => {
   return (
     <>
       <header className={styles.header}>
-        <Link href="/">
-          <h2>BOTOCAR</h2>
-          <p>Choose and Buy your car</p>
+        <Link href={"/"}>
+          <h2>car4Sell</h2>
         </Link>
+        <p>choose and buy a car</p>
       </header>
-      <div className={styles.container}>{children}</div>
+        <div className={styles.container}>{children}</div>
       <footer className={styles.footer}>
-        <a href="https://botostart.ir" target="_blank">
-          Botostart
-        </a>{" "}
-        Next.js courses | BotoCar Project &copy;
+        car4sell next.js project
       </footer>
+      
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
