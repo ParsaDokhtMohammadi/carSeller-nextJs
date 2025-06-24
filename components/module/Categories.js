@@ -15,21 +15,21 @@ const Categories = () => {
                         <Sedan></Sedan>
                     </div>
                 </Link>
-                <Link href={`/categories/Hatchback`}>
+                <Link href={`/categories/hatchback`}>
                     <div>
-                        <p>Hatchback</p>
+                        <p>hatchback</p>
                         <Hatchback></Hatchback>
                     </div>
                 </Link>
                 <Link href={`/categories/suv`}>
                     <div>
-                        <p>Suv</p>
+                        <p>SUV</p>
                         <Suv></Suv>
                     </div>
                 </Link>
                 <Link href={`/categories/sport`}>
                     <div>
-                        <p>Sport</p>
+                        <p>Sport cars</p>
                         <Sport></Sport>
                     </div>
                 </Link>
